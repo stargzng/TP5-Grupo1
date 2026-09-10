@@ -33,4 +33,18 @@ public class DirectorioTelefonico {
         
     }
 
+    public Long buscarTelefono(Contacto cont){
+        
+        for (Map.Entry<Long, Contacto> entry : directorio.entrySet()) {
+            
+            Long telefono = entry.getKey();
+            Contacto contacto = entry.getValue();
+            
+            if (contacto.equals(cont)) {
+                return telefono;
+            }   
+        }
+        
+        return null;
+    }
 }
