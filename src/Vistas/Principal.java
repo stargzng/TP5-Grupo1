@@ -17,6 +17,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDpaneclientes = new javax.swing.JDesktopPane();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuClientes = new javax.swing.JMenu();
         agregarClienteJMenuItem = new javax.swing.JMenuItem();
@@ -26,26 +27,41 @@ public class Principal extends javax.swing.JFrame {
         buscarPorCiudadMenuItem = new javax.swing.JMenuItem();
         buscarTelefonoApellidoMenuItem = new javax.swing.JMenuItem();
         jMenuCiudades = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem = new javax.swing.JMenu();
         jMenuItemCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout jDpaneclientesLayout = new javax.swing.GroupLayout(jDpaneclientes);
+        jDpaneclientes.setLayout(jDpaneclientesLayout);
+        jDpaneclientesLayout.setHorizontalGroup(
+            jDpaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+        );
+        jDpaneclientesLayout.setVerticalGroup(
+            jDpaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 366, Short.MAX_VALUE)
+        );
+
+        jDesktopPane1.setLayer(jDpaneclientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addComponent(jDpaneclientes)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 366, Short.MAX_VALUE)
+            .addComponent(jDpaneclientes)
         );
 
         jMenuClientes.setText("Clientes");
 
         agregarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         agregarClienteJMenuItem.setText("Agregar Cliente");
+        agregarClienteJMenuItem.addActionListener(this::agregarClienteJMenuItemActionPerformed);
         jMenuClientes.add(agregarClienteJMenuItem);
 
         buscarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -70,6 +86,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar.add(jMenuDirectorio);
 
         jMenuCiudades.setText("Ciudades");
+
+        jMenuItem1.setText("Agregar Ciudad");
+        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
+        jMenuCiudades.add(jMenuItem1);
+
         jMenuBar.add(jMenuCiudades);
 
         jMenuItem.setText("Salir");
@@ -108,6 +129,14 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemCerrarActionPerformed
 
+    private void agregarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteJMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarClienteJMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -140,11 +169,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem buscarPorCiudadMenuItem;
     private javax.swing.JMenuItem buscarTelefonoApellidoMenuItem;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDpaneclientes;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuCiudades;
     private javax.swing.JMenu jMenuClientes;
     private javax.swing.JMenu jMenuDirectorio;
     private javax.swing.JMenu jMenuItem;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCerrar;
     // End of variables declaration//GEN-END:variables
 }
