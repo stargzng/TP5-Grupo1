@@ -17,7 +17,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jDpaneclientes = new javax.swing.JDesktopPane();
+        jDPaneclientes = new javax.swing.JDesktopPane();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuClientes = new javax.swing.JMenu();
         agregarClienteJMenuItem = new javax.swing.JMenuItem();
@@ -33,28 +33,28 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDpaneclientesLayout = new javax.swing.GroupLayout(jDpaneclientes);
-        jDpaneclientes.setLayout(jDpaneclientesLayout);
-        jDpaneclientesLayout.setHorizontalGroup(
-            jDpaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDPaneclientesLayout = new javax.swing.GroupLayout(jDPaneclientes);
+        jDPaneclientes.setLayout(jDPaneclientesLayout);
+        jDPaneclientesLayout.setHorizontalGroup(
+            jDPaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 512, Short.MAX_VALUE)
         );
-        jDpaneclientesLayout.setVerticalGroup(
-            jDpaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDPaneclientesLayout.setVerticalGroup(
+            jDPaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 366, Short.MAX_VALUE)
         );
 
-        jDesktopPane1.setLayer(jDpaneclientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jDPaneclientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDpaneclientes)
+            .addComponent(jDPaneclientes)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDpaneclientes)
+            .addComponent(jDPaneclientes)
         );
 
         jMenuClientes.setText("Clientes");
@@ -134,7 +134,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarClienteJMenuItemActionPerformed
 
     private void agregarCiudadjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCiudadjMenuItemActionPerformed
-        // TODO add your handling code here:
+        frmAgregarCiudad va = new frmAgregarCiudad();
+        
+        jDPaneclientes.add(va);
+        va.setVisible(true);
     }//GEN-LAST:event_agregarCiudadjMenuItemActionPerformed
 
     /**
@@ -169,8 +172,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem buscarClienteJMenuItem;
     private javax.swing.JMenuItem buscarPorCiudadMenuItem;
     private javax.swing.JMenuItem buscarTelefonoApellidoMenuItem;
+    private javax.swing.JDesktopPane jDPaneclientes;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JDesktopPane jDpaneclientes;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuCiudades;
     private javax.swing.JMenu jMenuClientes;
