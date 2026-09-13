@@ -27,8 +27,8 @@ public class Principal extends javax.swing.JFrame {
         buscarPorCiudadMenuItem = new javax.swing.JMenuItem();
         buscarTelefonoApellidoMenuItem = new javax.swing.JMenuItem();
         jMenuCiudades = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem = new javax.swing.JMenu();
+        agregarCiudadjMenuItem = new javax.swing.JMenuItem();
+        jMenuSalir = new javax.swing.JMenu();
         jMenuItemCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +69,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuClientes.add(buscarClienteJMenuItem);
 
         borrarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        borrarClienteJMenuItem.setText("Borrar CLiente");
+        borrarClienteJMenuItem.setText("Borrar Cliente");
         borrarClienteJMenuItem.addActionListener(this::borrarClienteJMenuItemActionPerformed);
         jMenuClientes.add(borrarClienteJMenuItem);
 
@@ -87,19 +87,19 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuCiudades.setText("Ciudades");
 
-        jMenuItem1.setText("Agregar Ciudad");
-        jMenuItem1.addActionListener(this::jMenuItem1ActionPerformed);
-        jMenuCiudades.add(jMenuItem1);
+        agregarCiudadjMenuItem.setText("Agregar Ciudad");
+        agregarCiudadjMenuItem.addActionListener(this::agregarCiudadjMenuItemActionPerformed);
+        jMenuCiudades.add(agregarCiudadjMenuItem);
 
         jMenuBar.add(jMenuCiudades);
 
-        jMenuItem.setText("Salir");
+        jMenuSalir.setText("Salir");
 
         jMenuItemCerrar.setText("Salir del programa");
         jMenuItemCerrar.addActionListener(this::jMenuItemCerrarActionPerformed);
-        jMenuItem.add(jMenuItemCerrar);
+        jMenuSalir.add(jMenuItemCerrar);
 
-        jMenuBar.add(jMenuItem);
+        jMenuBar.add(jMenuSalir);
 
         setJMenuBar(jMenuBar);
 
@@ -133,9 +133,9 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarClienteJMenuItemActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void agregarCiudadjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCiudadjMenuItemActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_agregarCiudadjMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +163,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem agregarCiudadjMenuItem;
     private javax.swing.JMenuItem agregarClienteJMenuItem;
     private javax.swing.JMenuItem borrarClienteJMenuItem;
     private javax.swing.JMenuItem buscarClienteJMenuItem;
@@ -174,8 +175,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCiudades;
     private javax.swing.JMenu jMenuClientes;
     private javax.swing.JMenu jMenuDirectorio;
-    private javax.swing.JMenu jMenuItem;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCerrar;
+    private javax.swing.JMenu jMenuSalir;
     // End of variables declaration//GEN-END:variables
 }

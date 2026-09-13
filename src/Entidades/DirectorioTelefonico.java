@@ -1,5 +1,7 @@
 package Entidades;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -46,5 +48,26 @@ public class DirectorioTelefonico {
         }
         
         return null;
+    }
+    
+    public ArrayList<Contacto> buscarContactos(String ciudad){
+        ArrayList<Contacto> c = new ArrayList<>();
+        Iterator<Contacto> i = directorio.values().iterator();
+        
+        while(i.hasNext()){
+            Contacto cont = i.next();
+            
+            if (cont.getCiudad().equalsIgnoreCase(ciudad)) {
+                c.add(cont);
+            }
+        }
+        
+        return c;
+    }
+    
+    public void borrarContacto(Long tel){
+        if (directorio.containsKey(tel)) {
+            directorio.remove(tel);
+        }
     }
 }
