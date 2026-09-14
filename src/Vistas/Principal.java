@@ -3,14 +3,16 @@ package Vistas;
 import Entidades.Contacto;
 import Entidades.DirectorioTelefonico;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Principal extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
-    private static final DirectorioTelefonico directorio = new DirectorioTelefonico();
+    static final DirectorioTelefonico directorio = new DirectorioTelefonico();
+    
     static final ArrayList<String> ciudades = new ArrayList<>();
     static final ArrayList<Contacto> contactos = new ArrayList<>();
-
+    
     public Principal() {
         initComponents();
     }
