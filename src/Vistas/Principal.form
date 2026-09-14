@@ -50,11 +50,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buscar Clientes por Ciudad"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarPorCiudadMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarTelefonoApellidoMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buscar Telefono por Apellido"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarTelefonoApellidoMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

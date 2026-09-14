@@ -28,7 +28,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
 
         lblClienporCiudad = new javax.swing.JLabel();
         lblCiudades = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbCiudades = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtDatosCliente = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
@@ -39,7 +39,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
         lblCiudades.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblCiudades.setText("Ciudades:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jtDatosCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -68,7 +68,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblCiudades)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(35, 35, 35)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblClienporCiudad)
@@ -84,7 +84,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
                 .addComponent(lblCiudades)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(btnSalir)
@@ -101,7 +101,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbCiudades;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jtDatosCliente;
     private javax.swing.JLabel lblCiudades;

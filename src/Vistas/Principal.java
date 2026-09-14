@@ -67,9 +67,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuDirectorio.setText("Directorio");
 
         buscarPorCiudadMenuItem.setText("Buscar Clientes por Ciudad");
+        buscarPorCiudadMenuItem.addActionListener(this::buscarPorCiudadMenuItemActionPerformed);
         jMenuDirectorio.add(buscarPorCiudadMenuItem);
 
         buscarTelefonoApellidoMenuItem.setText("Buscar Telefono por Apellido");
+        buscarTelefonoApellidoMenuItem.addActionListener(this::buscarTelefonoApellidoMenuItemActionPerformed);
         jMenuDirectorio.add(buscarTelefonoApellidoMenuItem);
 
         jMenuBar.add(jMenuDirectorio);
@@ -126,6 +128,18 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(agregarCliente);
         agregarCliente.setVisible(true);
     }//GEN-LAST:event_agregarClienteJMenuItemActionPerformed
+
+    private void buscarPorCiudadMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPorCiudadMenuItemActionPerformed
+        frmClientesporCiudad va = new frmClientesporCiudad();
+        Escritorio.add(va);
+        va.setVisible(true);
+    }//GEN-LAST:event_buscarPorCiudadMenuItemActionPerformed
+
+    private void buscarTelefonoApellidoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarTelefonoApellidoMenuItemActionPerformed
+        frmTelefonoporApellido va = new frmTelefonoporApellido();
+        Escritorio.add(va);
+        va.setVisible(true);
+    }//GEN-LAST:event_buscarTelefonoApellidoMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
