@@ -1,13 +1,16 @@
 package Vistas;
 
+import Entidades.DirectorioTelefonico;
+import java.util.ArrayList;
+
 
 public class Principal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
-
-    /**
-     * Creates new form Pantalla
-     */
+    private static final DirectorioTelefonico directorio = new DirectorioTelefonico();
+    static final ArrayList<String> ciudades = new ArrayList<>();
+    
+    
     public Principal() {
         initComponents();
     }

@@ -4,15 +4,17 @@
  */
 package Vistas;
 
+import Entidades.Contacto;
+import Entidades.DirectorioTelefonico;
+import java.util.TreeMap;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramir
  */
 public class frmAgregarCiudad extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form AgregarCiudad
-     */
     public frmAgregarCiudad() {
         initComponents();
     }
@@ -40,6 +42,7 @@ public class frmAgregarCiudad extends javax.swing.JInternalFrame {
         txtCiudad.addActionListener(this::txtCiudadActionPerformed);
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(this::btnSalirActionPerformed);
@@ -91,6 +94,18 @@ public class frmAgregarCiudad extends javax.swing.JInternalFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        if (!txtCiudad.getText().isEmpty()) {
+            Principal.ciudades.add(txtCiudad.getText());
+            JOptionPane.showMessageDialog(this, "Ciudad agregada con exito!");
+        } else{JOptionPane.showMessageDialog(this, "ingrese una ciudad");
+        }
+        
+        txtCiudad.setText("");
+
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
