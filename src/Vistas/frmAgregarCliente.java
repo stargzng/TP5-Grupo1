@@ -204,8 +204,6 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
             String direccion = DomicilioTxtfield.getText();
 
             Contacto contacto = new Contacto(dni, nombre, apellido, ciudad, direccion);
-            Principal.contactos.add(contacto);
-           
 
             if (TelefonoTxtField.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Ingrese un numero telefonico valido!");

@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 public class DirectorioTelefonico {
 
-    private static TreeMap<Long, Contacto> directorio = new TreeMap<>();
+    public static TreeMap<Long, Contacto> directorio = new TreeMap<>();
     
     public void agregarContacto(Long nro, Contacto contacto) {
         directorio.put(nro, contacto);
