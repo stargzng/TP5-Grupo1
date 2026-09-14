@@ -3,7 +3,9 @@ package Entidades;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class DirectorioTelefonico {
 
@@ -30,24 +32,24 @@ public class DirectorioTelefonico {
 
         }
 
-        System.out.println("El numero especificado no se encuentra en el directorio");
+        System.out.println("El numero no se encuentra en el directorio");
         return null;
         
     }
 
-    public Long buscarTelefono(Contacto cont){
-        
-        for (Map.Entry<Long, Contacto> entry : directorio.entrySet()) {
-            
-            Long telefono = entry.getKey();
-            Contacto contacto = entry.getValue();
-            
-            if (contacto.equals(cont)) {
-                return telefono;
-            }   
+    public Set<Long> buscarTelefono(String apellido) {
+    Set<Long> tel = new TreeSet<>();
+
+    for (Map.Entry<Long, Contacto> entry : directorio.entrySet()) {
+        Long telefono = entry.getKey();
+        Contacto contacto = entry.getValue();
+
+        if (contacto.getApellido().equalsIgnoreCase(apellido)) {
+            tel.add(telefono);
         }
-        
-        return null;
+    }
+
+    return tel;
     }
     
     public ArrayList<Contacto> buscarContactos(String ciudad){

@@ -58,5 +58,9 @@ public class Contacto {
     }
     
     
+    @Override
+public String toString() {
+    return "DNI: "+dni+", Nombre: "+nombre+", Apellido: "+apellido+ ", Ciudad: "+ciudad+", Direccion: "+direccion;
+}   
     
 }
