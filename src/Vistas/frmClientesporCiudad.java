@@ -35,15 +35,20 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
 
         jtDatosCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "DNI", "Apellido", "Nombre", "Direccion", "Ciudad", "Telefono"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jtDatosCliente);
 
         btnSalir.setText("Salir");
@@ -91,6 +96,7 @@ public class frmClientesporCiudad extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void cmbCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCiudadesActionPerformed
+        modelo.setRowCount(0);
         cargarTabla();
         
     }//GEN-LAST:event_cmbCiudadesActionPerformed
