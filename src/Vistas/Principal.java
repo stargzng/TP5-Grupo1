@@ -1,9 +1,8 @@
 package Vistas;
 
-import Entidades.Contacto;
 import Entidades.DirectorioTelefonico;
 import java.util.ArrayList;
-import java.util.TreeMap;
+
 
 public class Principal extends javax.swing.JFrame {
 
@@ -11,7 +10,6 @@ public class Principal extends javax.swing.JFrame {
     static final DirectorioTelefonico directorio = new DirectorioTelefonico();
     
     static final ArrayList<String> ciudades = new ArrayList<>();
-    static final ArrayList<Contacto> contactos = new ArrayList<>();
     
     public Principal() {
         initComponents();
@@ -36,6 +34,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuItemCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
@@ -112,6 +111,7 @@ public class Principal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void borrarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarClienteJMenuItemActionPerformed
@@ -147,9 +147,7 @@ public class Principal extends javax.swing.JFrame {
         va.setVisible(true);
     }//GEN-LAST:event_buscarTelefonoApellidoMenuItemActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
