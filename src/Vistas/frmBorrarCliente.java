@@ -114,7 +114,7 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
         modelo.removeRow(jTable1.getSelectedRow());
         
         //ELIMINA EL CONTACTO DEL DIRECTORIO
-        String lista = jList1.getSelectedValue();
+        String lista = String.valueOf(jList1.getSelectedValue());
 
         
         for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
@@ -122,7 +122,7 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
             Contacto contacto = aux.getValue();
 
             if (lista.equals(Integer.toString(contacto.getDni()))) {
-                Principal.directorio.directorio.remove(tel, contacto);
+                Principal.directorio.borrarContacto(tel);
             }
         }
     }//GEN-LAST:event_borrarBTNActionPerformed
