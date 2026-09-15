@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vistas;
+import Entidades.Contacto;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.JTextField;
 
 import Entidades.Contacto;
 import javax.swing.DefaultListModel;
@@ -12,6 +16,9 @@ import javax.swing.DefaultListModel;
  * @author Centeno-Net
  */
 public class frmBuscarCliente extends javax.swing.JInternalFrame {
+    private JList<Long> listaTelefonos;
+    private DefaultListModel<Long> modeloLista = new DefaultListModel<>();
+    private JTextField txtDni, txtApellido, txtNombre, txtCiudad, txtDomicilio, txtBusquedaTel;
 
     private DefaultListModel<String> modeloLista;
 
@@ -20,10 +27,21 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
      */
     public frmBuscarCliente() {
         initComponents();
+<<<<<<< Updated upstream
         modeloLista = new DefaultListModel<>();
         jListTelefonos.setModel(modeloLista);
+=======
+>>>>>>> Stashed changes
         llenarListaTelefonos();
     }
+    private void llenarListaTelefonos() {
+        modeloLista.clear();
+        for (Long tel : Principal.directorio.keySet()) {
+            modeloLista.addElement(tel);
+        }
+        jlisttelefonos.setModel(modeloLista);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,6 +59,7 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< Updated upstream
         jLabel1 = new javax.swing.JLabel();
         lbbusquedaCliente = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -82,12 +101,54 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
 
         btSalir.setText("Salir");
         btSalir.addActionListener(this::btSalirActionPerformed);
+=======
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lbtelefono = new javax.swing.JLabel();
+        txftelefono = new javax.swing.JTextField();
+        lbdni = new javax.swing.JLabel();
+        lbapellido = new javax.swing.JLabel();
+        lbnombre = new javax.swing.JLabel();
+        lbciudad = new javax.swing.JLabel();
+        lbdomicilio = new javax.swing.JLabel();
+        txfdni = new javax.swing.JTextField();
+        txfapellido = new javax.swing.JTextField();
+        txfnombre = new javax.swing.JTextField();
+        txfdomicilio = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jlisttelefonos = new javax.swing.JList<>();
+        txfciudad = new javax.swing.JTextField();
+
+        lbtelefono.setText("Telefono:");
+
+        lbdni.setText("DNI:");
+
+        lbapellido.setText("Apellido:");
+
+        lbnombre.setText("Nombre");
+
+        lbciudad.setText("Ciudad:");
+
+        lbdomicilio.setText("Domicilio:");
+
+        txfdni.addActionListener(this::txfdniActionPerformed);
+
+        txfdomicilio.addActionListener(this::txfdomicilioActionPerformed);
+
+        jTextField6.addActionListener(this::jTextField6ActionPerformed);
+
+        jlisttelefonos.addListSelectionListener(this::jlisttelefonosValueChanged);
+        jScrollPane2.setViewportView(jlisttelefonos);
+
+        txfciudad.addActionListener(this::txfciudadActionPerformed);
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,10 +184,40 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbbusquedaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
+=======
+                .addGap(15, 15, 15)
+                .addComponent(lbtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(txftelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                .addGap(126, 126, 126)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lbnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbapellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbdni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbciudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbdomicilio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txfdomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField6)
+                        .addGap(93, 93, 93))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txfciudad, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                            .addComponent(txfapellido, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfdni, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfnombre, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> Stashed changes
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< Updated upstream
                 .addContainerGap()
                 .addComponent(lbbusquedaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,11 +250,41 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
                 .addGap(40, 40, 40)
                 .addComponent(btSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(42, Short.MAX_VALUE))
+=======
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbtelefono)
+                    .addComponent(txftelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbdni)
+                    .addComponent(txfdni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbapellido)
+                            .addComponent(txfapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbnombre)
+                            .addComponent(txfnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbciudad)
+                            .addComponent(txfciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbdomicilio)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txfdomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
     private void txTelefonoBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txTelefonoBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txTelefonoBusquedaActionPerformed
@@ -216,5 +337,62 @@ public class frmBuscarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txDomicilio;
     private javax.swing.JTextField txNombre;
     private javax.swing.JTextField txTelefonoBusqueda;
+=======
+    private void txfdniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfdniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfdniActionPerformed
+
+    private void txfdomicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfdomicilioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfdomicilioActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void txfciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfciudadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txfciudadActionPerformed
+
+    private void jlisttelefonosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlisttelefonosValueChanged
+        if (!evt.getValueIsAdjusting()) {
+            Long telefonoSeleccionado = jlisttelefonos.getSelectedValue();
+            
+            if (telefonoSeleccionado != null) {
+                // Obtenemos el cliente asociado a ese teléfono en el TreeMap
+                Cliente cliente = Principal.directorio.get(telefonoSeleccionado);
+                
+                if (cliente != null) {
+                    txftelefono.setText(telefonoSeleccionado.toString());
+                    txfdni.setText(String.valueOf(cliente.getDni()));
+                    txfapellido.setText(cliente.getApellido());
+                    txfnombre.setText(cliente.getNombre());
+                    txfciudad.setText(cliente.getCiudad()); // Asegúrate de que el método en Cliente se llame así
+                    txfdomicilio.setText(cliente.getDomicilio());
+                }
+            }
+        }
+    }//GEN-LAST:event_jlisttelefonosValueChanged
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JList<String> jlisttelefonos;
+    private javax.swing.JLabel lbapellido;
+    private javax.swing.JLabel lbciudad;
+    private javax.swing.JLabel lbdni;
+    private javax.swing.JLabel lbdomicilio;
+    private javax.swing.JLabel lbnombre;
+    private javax.swing.JLabel lbtelefono;
+    private javax.swing.JTextField txfapellido;
+    private javax.swing.JTextField txfciudad;
+    private javax.swing.JTextField txfdni;
+    private javax.swing.JTextField txfdomicilio;
+    private javax.swing.JTextField txfnombre;
+    private javax.swing.JTextField txftelefono;
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }
+
