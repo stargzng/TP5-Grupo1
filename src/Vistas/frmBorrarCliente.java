@@ -4,6 +4,7 @@ import Entidades.Contacto;
 import Entidades.DirectorioTelefonico;
 import java.util.Map;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmBorrarCliente extends javax.swing.JInternalFrame {
@@ -69,7 +70,7 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(borrarBTN)
-                        .addGap(180, 180, 180)
+                        .addGap(195, 195, 195)
                         .addComponent(salirBTN))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -95,7 +96,7 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(borrarBTN)
                     .addComponent(salirBTN))
@@ -110,13 +111,22 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_salirBTNActionPerformed
 
     private void borrarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBTNActionPerformed
+
         //ELIMINA LA FILA SELECCIONADA
-        modelo.removeRow(jTable1.getSelectedRow());
-        
+        try {
+            if (modelo.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(this, "Primero agregue contactos!");
+            } else {
+                modelo.removeRow(jTable1.getSelectedRow());
+            }
+            
+        } catch (Exception IndexOutOfBoundsException) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar una Fila!");
+        }
+
         //ELIMINA EL CONTACTO DEL DIRECTORIO
         String lista = String.valueOf(jList1.getSelectedValue());
 
-        
         for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
             Long tel = aux.getKey();
             Contacto contacto = aux.getValue();

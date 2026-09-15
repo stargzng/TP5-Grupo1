@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Principal extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
-    static final DirectorioTelefonico directorio = new DirectorioTelefonico();
     
+    static final DirectorioTelefonico directorio = new DirectorioTelefonico();
     static final ArrayList<String> ciudades = new ArrayList<>();
     
     public Principal() {
@@ -131,7 +131,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void borrarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarClienteJMenuItemActionPerformed
         frmBorrarCliente va = new frmBorrarCliente();
-        Escritorio.add(va);
+        jDesktopPane1.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_borrarClienteJMenuItemActionPerformed
 
@@ -141,33 +141,33 @@ public class Principal extends javax.swing.JFrame {
 
     private void agregarCiudadjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarCiudadjMenuItemActionPerformed
         frmAgregarCiudad va  = new frmAgregarCiudad();
-        Escritorio.add(va);
+        jDesktopPane1.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_agregarCiudadjMenuItemActionPerformed
 
     private void agregarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteJMenuItemActionPerformed
         // TODO add your handling code here:
         frmAgregarCliente agregarCliente = new frmAgregarCliente();
-        Escritorio.add(agregarCliente);
+        jDesktopPane1.add(agregarCliente);
         agregarCliente.setVisible(true);
     }//GEN-LAST:event_agregarClienteJMenuItemActionPerformed
 
     private void buscarPorCiudadMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarPorCiudadMenuItemActionPerformed
         frmClientesporCiudad va = new frmClientesporCiudad();
-        Escritorio.add(va);
+        jDesktopPane1.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_buscarPorCiudadMenuItemActionPerformed
 
     private void buscarTelefonoApellidoMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarTelefonoApellidoMenuItemActionPerformed
         frmTelefonoporApellido va = new frmTelefonoporApellido();
-        Escritorio.add(va);
+        jDesktopPane1.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_buscarTelefonoApellidoMenuItemActionPerformed
 
     private void buscarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteJMenuItemActionPerformed
-        frmBuscarCliente va = new frmBuscarCliente();
-        Escritorio.add(va);
-        va.setVisible(true);
+        frmBuscarClientes bc = new frmBuscarClientes();
+        jDesktopPane1.add(bc);
+        bc.setVisible(true);
     }//GEN-LAST:event_buscarClienteJMenuItemActionPerformed
 
 
