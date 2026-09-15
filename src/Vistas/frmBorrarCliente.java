@@ -1,20 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package Vistas;
 
-/**
- *
- * @author luuxc
- */
+import Entidades.Contacto;
+import Entidades.DirectorioTelefonico;
+import java.util.Map;
+import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
+
 public class frmBorrarCliente extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form frmBorrarCliente
-     */
+    private DefaultTableModel modelo = new DefaultTableModel();
+    private DefaultListModel modeloLista = new DefaultListModel();
+
     public frmBorrarCliente() {
         initComponents();
+        cabeceras();
+        cargarLista();
     }
 
     /**
@@ -26,16 +26,14 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         salirBTN = new javax.swing.JButton();
         borrarBTN = new javax.swing.JButton();
-
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("DNI:");
@@ -57,44 +55,47 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
         salirBTN.addActionListener(this::salirBTNActionPerformed);
 
         borrarBTN.setText("BORRAR");
+        borrarBTN.addActionListener(this::borrarBTNActionPerformed);
+
+        jList1.addListSelectionListener(this::jList1ValueChanged);
+        jScrollPane3.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(borrarBTN)
-                .addGap(143, 143, 143)
-                .addComponent(salirBTN)
-                .addGap(65, 65, 65))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(borrarBTN)
+                        .addGap(180, 180, 180)
+                        .addComponent(salirBTN))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(borrarBTN)
                     .addComponent(salirBTN))
@@ -108,15 +109,80 @@ public class frmBorrarCliente extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_salirBTNActionPerformed
 
+    private void borrarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBTNActionPerformed
+        //ELIMINA LA FILA SELECCIONADA
+        modelo.removeRow(jTable1.getSelectedRow());
+        
+        //ELIMINA EL CONTACTO DEL DIRECTORIO
+        String lista = jList1.getSelectedValue();
+
+        
+        for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
+            Long tel = aux.getKey();
+            Contacto contacto = aux.getValue();
+
+            if (lista.equals(Integer.toString(contacto.getDni()))) {
+                Principal.directorio.directorio.remove(tel, contacto);
+            }
+        }
+    }//GEN-LAST:event_borrarBTNActionPerformed
+
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+
+        modelo.setRowCount(0);
+
+        String seleccion = String.valueOf(jList1.getSelectedValue());
+
+        for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
+
+            Long telefono = aux.getKey();
+            Contacto contacto = aux.getValue();
+
+            if (seleccion.equals(Integer.toString(contacto.getDni()))) {
+
+                String DNI = Integer.toString(contacto.getDni());
+                String apellido = contacto.getApellido();
+                String nombre = contacto.getNombre();
+                String dir = contacto.getDireccion();
+                String city = contacto.getCiudad();
+                String tel = Long.toString(telefono);
+
+                modelo.addRow(new String[]{DNI, apellido, nombre, dir, city, tel});
+
+            }
+
+        }
+    }//GEN-LAST:event_jList1ValueChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borrarBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton salirBTN;
     // End of variables declaration//GEN-END:variables
+
+    private void cabeceras() {
+        modelo.addColumn("DNI");
+        modelo.addColumn("Apellido");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Direccion");
+        modelo.addColumn("Ciudad");
+        modelo.addColumn("Telefono");
+
+        jTable1.setModel(modelo);
+        jList1.setModel(modeloLista);
+    }
+
+    private void cargarLista() {
+
+        for (Contacto contacto : Principal.directorio.directorio.values()) {
+            modeloLista.addElement(contacto.getDni());
+        }
+
+    }
 }

@@ -70,6 +70,7 @@ public class DirectorioTelefonico {
     public void borrarContacto(Long tel){
         if (directorio.containsKey(tel)) {
             directorio.remove(tel);
+            
         }
     }
 }
