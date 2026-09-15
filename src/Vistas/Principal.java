@@ -56,6 +56,7 @@ public class Principal extends javax.swing.JFrame {
 
         buscarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         buscarClienteJMenuItem.setText("Buscar Cliente");
+        buscarClienteJMenuItem.addActionListener(this::buscarClienteJMenuItemActionPerformed);
         jMenuClientes.add(buscarClienteJMenuItem);
 
         borrarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -115,7 +116,9 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void borrarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarClienteJMenuItemActionPerformed
-        // TODO add your handling code here:
+        frmBorrarCliente va = new frmBorrarCliente();
+        Escritorio.add(va);
+        va.setVisible(true);
     }//GEN-LAST:event_borrarClienteJMenuItemActionPerformed
 
     private void jMenuItemCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCerrarActionPerformed
@@ -146,6 +149,12 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(va);
         va.setVisible(true);
     }//GEN-LAST:event_buscarTelefonoApellidoMenuItemActionPerformed
+
+    private void buscarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteJMenuItemActionPerformed
+        frmBuscarCliente va = new frmBuscarCliente();
+        Escritorio.add(va);
+        va.setVisible(true);
+    }//GEN-LAST:event_buscarClienteJMenuItemActionPerformed
 
 
     public static void main(String args[]) {
