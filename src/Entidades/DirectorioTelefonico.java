@@ -10,7 +10,7 @@ import java.util.TreeSet;
 public class DirectorioTelefonico {
 
     private static TreeMap<Long, Contacto> directorio = new TreeMap<>();
-    
+
     public void agregarContacto(Long nro, Contacto contacto) {
         directorio.put(nro, contacto);
     }
@@ -34,40 +34,44 @@ public class DirectorioTelefonico {
 
         System.out.println("El numero no se encuentra en el directorio");
         return null;
-        
+
     }
 
     public Set<Long> buscarTelefono(String apellido) {
-    Set<Long> tel = new TreeSet<>();
+        Set<Long> tel = new TreeSet<>();
 
-    for (Map.Entry<Long, Contacto> entry : directorio.entrySet()) {
-        Long telefono = entry.getKey();
-        Contacto contacto = entry.getValue();
+        for (Map.Entry<Long, Contacto> entry : directorio.entrySet()) {
+            Long telefono = entry.getKey();
+            Contacto contacto = entry.getValue();
 
-        if (contacto.getApellido().equalsIgnoreCase(apellido)) {
-            tel.add(telefono);
+            if (contacto.getApellido().equalsIgnoreCase(apellido)) {
+                tel.add(telefono);
+            }
         }
+
+        return tel;
     }
 
-    return tel;
-    }
-    
-    public ArrayList<Contacto> buscarContactos(String ciudad){
+    public ArrayList<Contacto> buscarContactos(String ciudad) {
         ArrayList<Contacto> c = new ArrayList<>();
         Iterator<Contacto> i = directorio.values().iterator();
-        
-        while(i.hasNext()){
+
+        while (i.hasNext()) {
             Contacto cont = i.next();
-            
+
             if (cont.getCiudad().equalsIgnoreCase(ciudad)) {
                 c.add(cont);
             }
         }
-        
+
         return c;
     }
-    
-    public void borrarContacto(Long tel){
+
+    public Set<Long> obtenerTelefonos() {
+        return directorio.keySet();
+    }
+
+    public void borrarContacto(Long tel) {
         if (directorio.containsKey(tel)) {
             directorio.remove(tel);
         }
