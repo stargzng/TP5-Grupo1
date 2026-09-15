@@ -2,18 +2,15 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Telefonos:"/>
       </Properties>
     </Component>
-=======
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
     </Container>
->>>>>>> Stashed changes
   </NonVisualComponents>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -33,97 +30,51 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-<<<<<<< Updated upstream
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" pref="92" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
-                  <Component id="txTelefonoBusqueda" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
+                  <Component id="txTelefonoBusqueda" pref="92" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel4" min="-2" pref="56" max="-2" attributes="0"/>
-                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace pref="130" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="txDni" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel4" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txDni" max="32767" attributes="0"/>
                           <Component id="txNombre" alignment="1" max="32767" attributes="0"/>
                           <Component id="txApellido" max="32767" attributes="0"/>
                           <Component id="txCiudad" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btSalir" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
-                          </Group>
                           <Component id="txDomicilio" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btSalir" min="-2" pref="64" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="lbbusquedaCliente" min="-2" pref="170" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-=======
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Component id="lbtelefono" min="-2" pref="59" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
-                  <Component id="txftelefono" pref="103" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="lbnombre" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbapellido" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbdni" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbciudad" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbdomicilio" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="txfdomicilio" min="-2" pref="114" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField6" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txfciudad" pref="114" max="32767" attributes="0"/>
-                          <Component id="txfapellido" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txfdni" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txfnombre" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
->>>>>>> Stashed changes
+              <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-<<<<<<< Updated upstream
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbbusquedaCliente" min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="lbbusquedaCliente" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,13 +82,9 @@
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txDni" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="60" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <Component id="txApellido" min="-2" max="-2" attributes="0"/>
@@ -157,53 +104,17 @@
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="btSalir" min="-2" pref="26" max="-2" attributes="0"/>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
-=======
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbtelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txftelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbdni" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txfdni" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbapellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txfapellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbnombre" min="-2" max="-2" attributes="0"/>
-                          <Component id="txfnombre" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbciudad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txfciudad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbdomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
-                          <Component id="txfdomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
+                  <Component id="jScrollPane3" min="-2" pref="117" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
->>>>>>> Stashed changes
+              <EmptySpace pref="9" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="lbbusquedaCliente">
       <Properties>
         <Property name="text" type="java.lang.String" value="Busqueda de Clientes"/>
@@ -219,91 +130,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txTelefonoBusquedaActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-=======
-    <Component class="javax.swing.JLabel" name="lbtelefono">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Telefono:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txftelefono">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbdni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="DNI:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbapellido">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbnombre">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbciudad">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ciudad:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbdomicilio">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Domicilio:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txfdni">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfdniActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txfapellido">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txfnombre">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txfdomicilio">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfdomicilioActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
-      </Events>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
->>>>>>> Stashed changes
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-<<<<<<< Updated upstream
-        <Component class="javax.swing.JList" name="jListTelefonos">
-=======
-        <Component class="javax.swing.JList" name="jlisttelefonos">
->>>>>>> Stashed changes
-          <Properties>
-            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="0"/>
-            </Property>
-          </Properties>
-          <Events>
-<<<<<<< Updated upstream
-            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jListTelefonosValueChanged"/>
-=======
-            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jlisttelefonosValueChanged"/>
->>>>>>> Stashed changes
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-      </SubComponents>
-    </Container>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Dni:"/>
@@ -345,12 +171,26 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalirActionPerformed"/>
-=======
-    <Component class="javax.swing.JTextField" name="txfciudad">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfciudadActionPerformed"/>
->>>>>>> Stashed changes
       </Events>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="jListTelefonos">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

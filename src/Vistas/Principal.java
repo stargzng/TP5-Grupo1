@@ -19,7 +19,8 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Escritorio = new javax.swing.JDesktopPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDPaneclientes = new javax.swing.JDesktopPane();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuClientes = new javax.swing.JMenu();
         agregarClienteJMenuItem = new javax.swing.JMenuItem();
@@ -36,15 +37,28 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
-        Escritorio.setLayout(EscritorioLayout);
-        EscritorioLayout.setHorizontalGroup(
-            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jDPaneclientesLayout = new javax.swing.GroupLayout(jDPaneclientes);
+        jDPaneclientes.setLayout(jDPaneclientesLayout);
+        jDPaneclientesLayout.setHorizontalGroup(
+            jDPaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 783, Short.MAX_VALUE)
         );
-        EscritorioLayout.setVerticalGroup(
-            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jDPaneclientesLayout.setVerticalGroup(
+            jDPaneclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 492, Short.MAX_VALUE)
+        );
+
+        jDesktopPane1.setLayer(jDPaneclientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDPaneclientes)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jDPaneclientes)
         );
 
         jMenuClientes.setText("Clientes");
@@ -101,13 +115,13 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -180,13 +194,14 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuItem agregarCiudadjMenuItem;
     private javax.swing.JMenuItem agregarClienteJMenuItem;
     private javax.swing.JMenuItem borrarClienteJMenuItem;
     private javax.swing.JMenuItem buscarClienteJMenuItem;
     private javax.swing.JMenuItem buscarPorCiudadMenuItem;
     private javax.swing.JMenuItem buscarTelefonoApellidoMenuItem;
+    private javax.swing.JDesktopPane jDPaneclientes;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuCiudades;
     private javax.swing.JMenu jMenuClientes;
