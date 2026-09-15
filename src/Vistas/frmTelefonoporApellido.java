@@ -143,6 +143,7 @@ public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
                 String tel = Long.toString(telefono);
 
                 modelo.addRow(new String[]{DNI, apellido, nombre, dir, city, tel});
+                txtApellido.setText(Apellido);
             }
 
         }
