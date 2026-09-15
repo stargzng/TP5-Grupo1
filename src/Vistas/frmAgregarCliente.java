@@ -35,7 +35,7 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
         NombreTxtfield = new javax.swing.JTextField();
         ApellidoTxtfield = new javax.swing.JTextField();
         DomicilioTxtfield = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbCiudad = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         guardarButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -101,7 +101,7 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(29, 29, 29)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cmbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -130,7 +130,7 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -196,16 +196,24 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
     private void guardarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarButtonActionPerformed
 
         try {
+            
+            if (cmbCiudad.getItemCount() == 0) {
+                JOptionPane.showMessageDialog(this, "Primero debe ingresar una ciudad");
+                return;
+            }
+            
+            if (NombreTxtfield.getText().isEmpty() || ApellidoTxtfield.getText().isEmpty() || DomicilioTxtfield.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Complete todos los campos");
+                return;
+            }
 
             int dni = Integer.parseInt(DNItxtfield.getText());
             String nombre = NombreTxtfield.getText();
             String apellido = ApellidoTxtfield.getText();
-            String ciudad = (String) jComboBox1.getSelectedItem();
+            String ciudad = (String) cmbCiudad.getSelectedItem();
             String direccion = DomicilioTxtfield.getText();
 
             Contacto contacto = new Contacto(dni, nombre, apellido, ciudad, direccion);
-            Principal.contactos.add(contacto);
-           
 
             if (TelefonoTxtField.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Ingrese un numero telefonico valido!");
@@ -225,8 +233,6 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Ingrese datos validos en los campos!");
 
         }
-
-
     }//GEN-LAST:event_guardarButtonActionPerformed
 
 
@@ -236,9 +242,9 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField DomicilioTxtfield;
     private javax.swing.JTextField NombreTxtfield;
     private javax.swing.JTextField TelefonoTxtField;
+    private javax.swing.JComboBox<String> cmbCiudad;
     private javax.swing.JButton guardarButton;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -252,7 +258,7 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
 
     private void cargarComboBoxCiudades() {
         for (String aux : Principal.ciudades) {
-            jComboBox1.addItem(aux);
+            cmbCiudad.addItem(aux);
         }
     }
 

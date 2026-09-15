@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package Vistas;
 
-/**
- *
- * @author ramir
- */
+import Entidades.Contacto;
+import java.util.Map;
+import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
+
 public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form frmTelefonoporApellido
-     */
+    private DefaultTableModel modelo = new DefaultTableModel();
+    private DefaultListModel modeloLista = new DefaultListModel();
+
     public frmTelefonoporApellido() {
         initComponents();
+        cabeceras();
+        cargarLista();
     }
 
     /**
@@ -32,21 +31,28 @@ public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
         btnSalir = new javax.swing.JButton();
         lblApellido = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         lblTelporApellido.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lblTelporApellido.setText("Buscar Telefono por Apellido");
 
         jtDatosCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "DNI", "Apellido", "Nombre", "Direccion", "Ciudad", "Telefono"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jtDatosCliente);
 
         btnSalir.setText("Salir");
@@ -56,6 +62,9 @@ public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
         lblApellido.setText("Apellido");
 
         txtApellido.addActionListener(this::txtApellidoActionPerformed);
+
+        jList1.addListSelectionListener(this::jList1ValueChanged);
+        jScrollPane2.setViewportView(jList1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,28 +80,36 @@ public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(lblApellido)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(lblApellido)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtApellido))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(12, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
+                .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lblTelporApellido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblApellido)
-                        .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblApellido)
+                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnSalir)
-                .addGap(16, 16, 16))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -106,13 +123,69 @@ public class frmTelefonoporApellido extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+
+        modelo.setRowCount(0);
+        String Apellido = jList1.getSelectedValue();
+
+        for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
+
+            Long telefono = aux.getKey();
+            Contacto contacto = aux.getValue();
+
+            if (Apellido.equalsIgnoreCase(contacto.getApellido())) {
+
+                String DNI = Integer.toString(contacto.getDni());
+                String apellido = contacto.getApellido();
+                String nombre = contacto.getNombre();
+                String dir = contacto.getDireccion();
+                String city = contacto.getCiudad();
+                String tel = Long.toString(telefono);
+
+                modelo.addRow(new String[]{DNI, apellido, nombre, dir, city, tel});
+                txtApellido.setText(Apellido);
+            }
+
+        }
+    }//GEN-LAST:event_jList1ValueChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jtDatosCliente;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblTelporApellido;
     private javax.swing.JTextField txtApellido;
     // End of variables declaration//GEN-END:variables
+
+    private void cabeceras() {
+        modelo.addColumn("DNI");
+        modelo.addColumn("Apellido");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Direccion");
+        modelo.addColumn("Ciudad");
+        modelo.addColumn("Telefono");
+
+        jtDatosCliente.setModel(modelo);
+        jList1.setModel(modeloLista);
+    }
+
+    private void cargarLista() {
+
+        for (Contacto aux : Principal.directorio.directorio.values()) {
+            modeloLista.addElement(aux.getApellido());
+        }
+
+//        for (Map.Entry<Long, Contacto> aux : Principal.directorio.directorio.entrySet()) {
+//            Long Telefono = aux.getKey();
+//            Contacto Contacto = aux.getValue();
+//            
+//            modeloLista.addElement(Contacto.getApellido());
+//            
+//        }
+    }
+
 }

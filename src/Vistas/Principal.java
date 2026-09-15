@@ -1,9 +1,8 @@
 package Vistas;
 
-import Entidades.Contacto;
 import Entidades.DirectorioTelefonico;
 import java.util.ArrayList;
-import java.util.TreeMap;
+
 
 public class Principal extends javax.swing.JFrame {
 
@@ -11,7 +10,6 @@ public class Principal extends javax.swing.JFrame {
     static final DirectorioTelefonico directorio = new DirectorioTelefonico();
     
     static final ArrayList<String> ciudades = new ArrayList<>();
-    static final ArrayList<Contacto> contactos = new ArrayList<>();
     
     public Principal() {
         initComponents();
@@ -36,16 +34,17 @@ public class Principal extends javax.swing.JFrame {
         jMenuItemCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
+            .addGap(0, 783, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 451, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
 
         jMenuClientes.setText("Clientes");
@@ -57,6 +56,7 @@ public class Principal extends javax.swing.JFrame {
 
         buscarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         buscarClienteJMenuItem.setText("Buscar Cliente");
+        buscarClienteJMenuItem.addActionListener(this::buscarClienteJMenuItemActionPerformed);
         jMenuClientes.add(buscarClienteJMenuItem);
 
         borrarClienteJMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -100,18 +100,25 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void borrarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarClienteJMenuItemActionPerformed
-        // TODO add your handling code here:
+        frmBorrarCliente va = new frmBorrarCliente();
+        Escritorio.add(va);
+        va.setVisible(true);
     }//GEN-LAST:event_borrarClienteJMenuItemActionPerformed
 
     private void jMenuItemCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCerrarActionPerformed
@@ -143,9 +150,13 @@ public class Principal extends javax.swing.JFrame {
         va.setVisible(true);
     }//GEN-LAST:event_buscarTelefonoApellidoMenuItemActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void buscarClienteJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteJMenuItemActionPerformed
+        frmBuscarCliente va = new frmBuscarCliente();
+        Escritorio.add(va);
+        va.setVisible(true);
+    }//GEN-LAST:event_buscarClienteJMenuItemActionPerformed
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
